@@ -19,10 +19,10 @@ public class CustomParserImpl implements CustomParser {
         int[] array = new int[parts.length];
         for (int i = 0; i < parts.length; i++) {
             try {
-                array[i] = Integer.parseInt(parts[i].strip());
+                array[i] = Integer.parseInt(parts[i]);
             } catch (NumberFormatException e) {
                 logger.error("Failed to parse element: {}", parts[i]);
-                throw new CustomException("Failed to parse element: " + parts[i], e);
+                throw new CustomException("Failed to parse element: " + parts[i]);
             }
         }
         logger.debug("Line parsed into array of {} elements", array.length);

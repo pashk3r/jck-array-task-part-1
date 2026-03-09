@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Main {
     private static final Logger logger = LogManager.getLogger();
-    private static final String FILE_PATH = "data/data.txt";
+    private static final String FILE_PATH = "data/dat.txt";
 
     public static void main(String[] args) throws CustomException {
         CustomFileReaderImpl reader = new CustomFileReaderImpl();
@@ -23,7 +23,6 @@ public class Main {
         ArrayOperationImpl operation = new ArrayOperationImpl();
         ArraySortImpl sort = new ArraySortImpl();
 
-        logger.info("File: {}", FILE_PATH);
         List<String> lines = reader.readFile(FILE_PATH);
 
         List<CustomArray> arrays = new ArrayList<>();
@@ -32,13 +31,13 @@ public class Main {
                 int[] arr = parser.parseString(line);
                 arrays.add(factory.createCustomArray(arr));
             } catch (CustomException e) {
-                logger.warn("Invalid line: {}", line);
+                logger.warn("Invalid line - {}", line);
             }
         }
 
         logger.info("Created {} arrays from file", arrays.size());
         for (CustomArray array : arrays) {
-            logger.info("------------------------------");
+            logger.info("-------------------------------------------------------");
             logger.info("Array: {}", array);
             logger.info("Min: {}", operation.min(array));
             logger.info("Max: {}", operation.max(array));

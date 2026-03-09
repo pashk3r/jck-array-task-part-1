@@ -4,11 +4,8 @@ import by.pashker.array.entity.CustomArray;
 import by.pashker.array.exception.CustomException;
 import by.pashker.array.service.ArrayOperation;
 import by.pashker.array.validation.impl.CustomArrayValidatorImpl;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ArrayOperationImpl implements ArrayOperation {
-    private static final Logger logger = LogManager.getLogger(ArrayOperationImpl.class);
     private final CustomArrayValidatorImpl validator = new CustomArrayValidatorImpl();
 
     @Override
@@ -20,7 +17,6 @@ public class ArrayOperationImpl implements ArrayOperation {
                 min = array.getElement(i);
             }
         }
-        logger.debug("Min element: {}", min);
         return min;
     }
 
@@ -33,7 +29,6 @@ public class ArrayOperationImpl implements ArrayOperation {
                 max = array.getElement(i);
             }
         }
-        logger.debug("Max element: {}", max);
         return max;
     }
 
@@ -44,7 +39,6 @@ public class ArrayOperationImpl implements ArrayOperation {
         for (int element : array.getArray()) {
             sum += element;
         }
-        logger.debug("Sum of elements: {}", sum);
         return sum;
     }
 }

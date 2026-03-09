@@ -4,11 +4,8 @@ import by.pashker.array.entity.CustomArray;
 import by.pashker.array.exception.CustomException;
 import by.pashker.array.service.ArraySort;
 import by.pashker.array.validation.impl.CustomArrayValidatorImpl;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ArraySortImpl implements ArraySort {
-    private static final Logger logger = LogManager.getLogger(ArraySortImpl.class);
     private final CustomArrayValidatorImpl validator = new CustomArrayValidatorImpl();
 
     @Override
@@ -24,7 +21,6 @@ public class ArraySortImpl implements ArraySort {
                 }
             }
         }
-        logger.debug("Bubble sort completed");
         return new CustomArray(arr);
     }
 
@@ -43,7 +39,6 @@ public class ArraySortImpl implements ArraySort {
             arr[minIndex] = arr[i];
             arr[i] = temp;
         }
-        logger.debug("Selection sort completed");
         return new CustomArray(arr);
     }
 }
