@@ -64,11 +64,7 @@ public class CustomArray {
 
     @Override
     public int hashCode() {
-        int result = 1;
-        for (int element : array) {
-            result = 31 * result + element;
-        }
-        return result;
+        return Arrays.hashCode(array);
     }
 
     @Override
