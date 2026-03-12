@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.pashker.array</groupId>
-    <artifactId>array-first-task-part-one</artifactId>
+    <artifactId>arrays-task-one</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
